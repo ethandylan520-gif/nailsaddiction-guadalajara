@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NailsAddiction | Salón de Uñas en Guadalajara</title>
+<meta name="description" content="NailsAddiction - Centro de uñas y spa en Guadalajara con Stefany Garces. Manicura, uñas acrílicas y pedicura. 4.9 en Booksy, 82 reseñas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FDF1F6;
+    --bg2: #FBE0EC;
+    --line: #F3C4DA;
+    --pink: #D6296B;
+    --pink-dark: #A31650;
+    --ink: #33222B;
+    --gray: #8C707E;
+    --font-display: 'Fraunces', serif;
+    --font-body: 'Quicksand', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 500; color: var(--ink); }
+
+  header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(253, 241, 246, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; max-width: 1120px; margin: 0 auto; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand span { font-family: var(--font-display); font-size: 1.2rem; color: var(--ink); }
+  .brand span em { color: var(--pink); font-style: normal; }
+  nav ul { list-style: none; display: flex; gap: 28px; }
+  nav ul a { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray); font-weight: 700; transition: color 0.2s; }
+  nav ul a:hover { color: var(--pink); }
+  .nav-cta { background: var(--pink); color: #fff; padding: 11px 24px; border-radius: 30px; font-weight: 700; font-size: 0.8rem; }
+
+  .hero {
+    min-height: 100vh; display: flex; align-items: center; position: relative;
+    padding-top: 90px;
+    background:
+      linear-gradient(100deg, rgba(253,241,246,0.95) 34%, rgba(253,241,246,0.72) 100%),
+      url('img/insp_8.jpeg') center/cover no-repeat;
+  }
+  .hero-content { max-width: 620px; }
+  .hero-tag { display: inline-block; color: var(--pink-dark); font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 20px; border: 1px solid var(--pink); padding: 7px 18px; border-radius: 30px; font-weight: 700; }
+  .hero h1 { font-size: 3.1rem; line-height: 1.15; color: var(--ink); margin-bottom: 22px; }
+  .hero h1 em { color: var(--pink); font-style: normal; }
+  .hero p { font-size: 1.12rem; color: var(--gray); max-width: 480px; margin-bottom: 32px; }
+  .hero-rating { display: flex; align-items: center; gap: 14px; margin-bottom: 34px; flex-wrap: wrap; }
+  .stars { color: var(--pink); font-size: 1.15rem; letter-spacing: 2px; }
+  .hero-rating span.txt { color: var(--gray); font-size: 0.9rem; }
+  .btn-row { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 16px 34px; font-weight: 700; font-size: 0.85rem; border-radius: 30px; transition: all 0.25s; }
+  .btn-primary { background: var(--pink); color: #fff; }
+  .btn-primary:hover { background: var(--pink-dark); }
+  .btn-outline { border: 1.5px solid var(--pink); color: var(--ink); }
+  .btn-outline:hover { border-color: var(--pink-dark); color: var(--pink-dark); }
+
+  section { padding: 100px 0; }
+  .section-head { text-align: center; max-width: 640px; margin: 0 auto 54px; }
+  .section-tag { color: var(--pink-dark); font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 14px; display: block; font-weight: 700; }
+  .section-head h2 { font-size: 2.4rem; color: var(--ink); }
+  .section-head p { color: var(--gray); margin-top: 16px; font-size: 1rem; }
+
+  .about { background: var(--bg2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .about-img { border-radius: 14px; overflow: hidden; border: 1px solid var(--line); }
+  .about-img img { height: 420px; width: 100%; object-fit: cover; }
+  .about-text h2 { font-size: 2.1rem; margin-bottom: 20px; color: var(--ink); }
+  .about-text p { color: var(--gray); margin-bottom: 16px; }
+  .about-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 30px; }
+  .fact { border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; background: var(--bg); }
+  .fact strong { display: block; font-family: var(--font-display); font-size: 1.8rem; color: var(--pink); }
+  .fact span { color: var(--gray); font-size: 0.83rem; }
+
+  .cat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .cat-card { border: 1px solid var(--line); background: var(--bg2); border-radius: 14px; padding: 28px 24px; transition: border-color 0.2s; }
+  .cat-card:hover { border-color: var(--pink); }
+  .cat-card h3 { font-size: 1.25rem; color: var(--ink); margin-bottom: 8px; }
+  .cat-card .cat-count { color: var(--pink-dark); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; margin-bottom: 12px; display: block; }
+  .cat-card p { color: var(--gray); font-size: 0.88rem; margin-bottom: 16px; min-height: 48px; }
+  .cat-card .cat-price { color: var(--pink-dark); font-weight: 700; font-size: 1rem; margin-bottom: 14px; display: block; }
+  .cat-card .cat-link { color: var(--ink); font-weight: 700; font-size: 0.82rem; border-bottom: 1.5px solid var(--pink); padding-bottom: 2px; }
+
+  .gallery { background: var(--bg2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .gallery-grid img { height: 230px; width: 100%; object-fit: cover; border-radius: 12px; border: 1px solid var(--line); }
+
+  .team-solo { display: flex; align-items: center; gap: 40px; background: var(--bg2); border: 1px solid var(--line); border-radius: 16px; padding: 44px; }
+  .team-avatar { width: 96px; height: 96px; border-radius: 50%; flex-shrink: 0; object-fit: cover; border: 2px solid var(--pink); }
+  .team-solo h3 { font-size: 1.5rem; color: var(--ink); margin-bottom: 4px; }
+  .team-solo span.role { color: var(--pink-dark); font-weight: 700; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .team-solo p { color: var(--gray); margin-top: 12px; }
+
+  .quote-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .quote-card { background: var(--bg2); border: 1px solid var(--line); border-radius: 14px; padding: 28px; }
+  .quote-card .stars { display: block; margin-bottom: 14px; }
+  .quote-card p { color: var(--gray); font-size: 0.93rem; margin-bottom: 16px; font-style: italic; }
+  .quote-card .who { color: var(--ink); font-weight: 700; font-size: 0.86rem; }
+
+  .info { background: var(--bg2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .info-block { margin-bottom: 32px; }
+  .info-block h3 { font-size: 1.1rem; color: var(--pink-dark); margin-bottom: 14px; }
+  .info-block p, .info-block li { color: var(--gray); }
+  .hours-list { list-style: none; }
+  .hours-list li { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 0.93rem; }
+  .hours-list li span:last-child { color: var(--ink); font-weight: 600; }
+  .map-frame { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); }
+  .map-frame img { width: 100%; }
+
+  .cta { text-align: center; padding: 120px 0; background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%); }
+  .cta h2 { font-size: 2.6rem; color: var(--ink); margin-bottom: 18px; }
+  .cta h2 em { color: var(--pink); font-style: normal; }
+  .cta p { color: var(--gray); max-width: 480px; margin: 0 auto 36px; font-size: 1.02rem; }
+
+  footer { background: var(--bg); border-top: 1px solid var(--line); padding: 40px 0; text-align: center; color: var(--gray); font-size: 0.85rem; }
+  footer .brand { justify-content: center; margin-bottom: 16px; }
+
+  .wa-float {
+    position: fixed; bottom: 26px; right: 26px; z-index: 200;
+    background: #25D366; width: 58px; height: 58px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  .wa-float svg { width: 28px; height: 28px; fill: #fff; }
+
+  @media (max-width: 900px) {
+    nav ul, .nav-cta { display: none; }
+    .hero h1 { font-size: 2.3rem; }
+    .about-grid, .info-grid { grid-template-columns: 1fr; gap: 36px; }
+    .cat-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .quote-strip { grid-template-columns: 1fr; }
+    .section-head h2 { font-size: 1.8rem; }
+    .cta h2 { font-size: 2rem; }
+    .team-solo { flex-direction: column; text-align: center; padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <span><em>Nails</em>Addiction</span>
+    </div>
+    <nav><ul>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#opiniones">Opiniones</a></li>
+      <li><a href="#info">Info</a></li>
+    </ul></nav>
+    <a href="#" class="nav-cta" id="navBook">Reservar</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-content">
+    <span class="hero-tag">Guadalajara &middot; Centro de uñas &amp; Spa</span>
+    <h1><em>Nails</em>Addiction</h1>
+    <p>Manicura, uñas acrílicas, pedicura y presoterapia con un acabado impecable en cada visita.</p>
+    <div class="hero-rating">
+      <span class="stars">★★★★★</span>
+      <span class="txt">4.9 en Booksy &middot; 82 reseñas &middot; 4.8 en Google (64)</span>
+    </div>
+    <div class="btn-row">
+      <a href="#" class="btn btn-primary" id="heroBook">Reservar por WhatsApp</a>
+      <a href="#servicios" class="btn btn-outline">Ver servicios</a>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap about-grid">
+    <div class="about-img"><img src="img/biz_1.jpeg" alt="Interior de NailsAddiction, Guadalajara"></div>
+    <div class="about-text">
+      <span class="section-tag">Sobre nosotras</span>
+      <h2>Centro de uñas y spa</h2>
+      <p>En NailsAddiction combinamos precisión técnica con diseños personalizados: manicura, uñas acrílicas, pedicura y tratamientos de presoterapia en un espacio pensado para cuidarte.</p>
+      <p>Stefany atiende cada cita con dedicación, cuidando cada detalle para que tu manicura dure y luzca perfecta.</p>
+      <div class="about-facts">
+        <div class="fact"><strong>82+</strong><span>Reseñas en Booksy</span></div>
+        <div class="fact"><strong>4.9</strong><span>Valoración en Booksy</span></div>
+        <div class="fact"><strong>64</strong><span>Reseñas en Google</span></div>
+        <div class="fact"><strong>5</strong><span>Días abiertos a la semana</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Carta de servicios</span>
+      <h2>Servicios</h2>
+      <p>Catálogo completo de manicura, uñas acrílicas, pedicura y más. Precios y duración exactos al reservar cada servicio en Booksy.</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card">
+        <span class="cat-count">10 servicios</span>
+        <h3>Manicura</h3>
+        <p>Desde manicura tradicional hasta permanente con refuerzo de gel o rubber.</p>
+        <span class="cat-price">Desde 10 €</span>
+        <a href="https://booksy.com/es-es/29740_nailsaddiction_salon-de-unas_36635_guadalajara" class="cat-link" target="_blank">Ver en Booksy →</a>
+      </div>
+      <div class="cat-card">
+        <span class="cat-count">8 servicios</span>
+        <h3>Uñas Acrílicas</h3>
+        <p>Acrílicas cortas, medianas o largas, con opción baby boomer.</p>
+        <span class="cat-price">Desde 29 €</span>
+        <a href="https://booksy.com/es-es/29740_nailsaddiction_salon-de-unas_36635_guadalajara" class="cat-link" target="_blank">Ver en Booksy →</a>
+      </div>
+      <div class="cat-card">
+        <span class="cat-count">3 servicios</span>
+        <h3>Acrygel</h3>
+        <p>Acrygel en largos cortos, medianos o largos.</p>
+        <span class="cat-price">Desde 35 €</span>
+        <a href="https://booksy.com/es-es/29740_nailsaddiction_salon-de-unas_36635_guadalajara" class="cat-link" target="_blank">Ver en Booksy →</a>
+      </div>
+      <div class="cat-card">
+        <span class="cat-count">6 servicios</span>
+        <h3>Relleno</h3>
+        <p>Relleno de acrílico o acrygel en distintos largos, con opción baby boomer.</p>
+        <span class="cat-price">Desde 32 €</span>
+        <a href="https://booksy.com/es-es/29740_nailsaddiction_salon-de-unas_36635_guadalajara" class="cat-link" target="_blank">Ver en Booksy →</a>
+      </div>
+      <div class="cat-card">
+        <span class="cat-count">2 servicios</span>
+        <h3>Uñas de Gel / Press On</h3>
+        <p>Uñas de gel o press on hasta el número 4, con opción baby boomer.</p>
+        <span class="cat-price">Desde 35 €</span>
+        <a href="https://booksy.com/es-es/29740_nailsaddiction_salon-de-unas_36635_guadalajara" class="cat-link" target="_blank">Ver en Booksy →</a>
+      </div>
+      <div class="cat-card">
+        <span class="cat-count">9 servicios</span>
+        <h3>Decoración</h3>
+        <p>Francesa, baby boomer, ojo de gato, cromado y dibujo a mano alzada.</p>
+        <span class="cat-price">Desde 1 €</span>
+        <a href="https://booksy.com/es-es/29740_nailsaddiction_salon-de-unas_36635_guadalajara" class="cat-link" target="_blank">Ver en Booksy →</a>
+      </div>
+      <div class="cat-card">
+        <span class="cat-count">6 servicios</span>
+        <h3>Retirada y Reparación</h3>
+        <p>Retirada de esmaltado permanente, acrílico o gel, y arreglo de uñas rotas.</p>
+        <span class="cat-price">Desde 4 €</span>
+        <a href="https://booksy.com/es-es/29740_nailsaddiction_salon-de-unas_36635_guadalajara" class="cat-link" target="_blank">Ver en Booksy →</a>
+      </div>
+      <div class="cat-card">
+        <span class="cat-count">9 servicios</span>
+        <h3>Pedicura</h3>
+        <p>Desde limpieza hasta pedicura completa con Jelly Spa.</p>
+        <span class="cat-price">Desde 4 €</span>
+        <a href="https://booksy.com/es-es/29740_nailsaddiction_salon-de-unas_36635_guadalajara" class="cat-link" target="_blank">Ver en Booksy →</a>
+      </div>
+      <div class="cat-card">
+        <span class="cat-count">3 servicios</span>
+        <h3>Presoterapia</h3>
+        <p>Sesión suelta o bono de 5 y 10 sesiones para mejorar la circulación.</p>
+        <span class="cat-price">Desde 20 €</span>
+        <a href="https://booksy.com/es-es/29740_nailsaddiction_salon-de-unas_36635_guadalajara" class="cat-link" target="_blank">Ver en Booksy →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="galeria">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Nuestro trabajo</span>
+      <h2>Un vistazo a nuestro estilo</h2>
+    </div>
+    <div class="gallery-grid">
+      <img src="img/insp_2.jpeg" alt="Manicura francesa en NailsAddiction">
+      <img src="img/insp_4.jpeg" alt="Manicura francesa azul en NailsAddiction">
+      <img src="img/insp_5.jpeg" alt="Diseño de uñas en NailsAddiction">
+      <img src="img/insp_6.jpeg" alt="Diseño Minnie Mouse en NailsAddiction">
+    </div>
+  </div>
+</section>
+
+<section id="opiniones">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Quién te atiende</span>
+      <h2>Conoce a Stefany</h2>
+    </div>
+    <div class="team-solo">
+      <img class="team-avatar" src="img/insp_3.jpeg" alt="Trabajo de Stefany Garces en NailsAddiction">
+      <div>
+        <h3>Stefany Garces</h3>
+        <span class="role">Manicurista</span>
+        <p>Stefy atiende cada cita con cariño y buen trato, cuidando cada diseño hasta el último detalle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Opiniones reales</span>
+      <h2>Lo que dicen de nosotras</h2>
+    </div>
+    <div class="quote-strip">
+      <div class="quote-card">
+        <span class="stars">★★★★★</span>
+        <p>"Cada día me encantan más sus diseños y cómo deja las uñas de bonitas."</p>
+        <div class="who">Rut</div>
+      </div>
+      <div class="quote-card">
+        <span class="stars">★★★★★</span>
+        <p>"Trabajo impecable y el trato es maravilloso."</p>
+        <div class="who">Andrea</div>
+      </div>
+      <div class="quote-card">
+        <span class="stars">★★★★★</span>
+        <p>"Encantadísima, me recomendaron dos personas y no he podido quedar más contenta con el resultado."</p>
+        <div class="who">Celia</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="info" id="info">
+  <div class="wrap info-grid">
+    <div>
+      <div class="info-block">
+        <h3>Horario</h3>
+        <ul class="hours-list">
+          <li><span>Lunes</span><span>10:00 - 20:00</span></li>
+          <li><span>Martes</span><span>12:00 - 21:30</span></li>
+          <li><span>Miércoles</span><span>12:00 - 17:00</span></li>
+          <li><span>Jueves</span><span>9:30 - 21:30</span></li>
+          <li><span>Viernes</span><span>11:30 - 21:30</span></li>
+          <li><span>Sábado - Domingo</span><span>Solo con cita</span></li>
+        </ul>
+      </div>
+      <div class="info-block">
+        <h3>Ubicación</h3>
+        <p>Calle Cifuentes, 19<br>19003 Guadalajara</p>
+      </div>
+    </div>
+    <div class="map-frame">
+      <img src="img/map.png" alt="Mapa de ubicación de NailsAddiction en Guadalajara">
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>¿Reservamos tu <em>cita</em>?</h2>
+    <p>Escríbenos por WhatsApp y te confirmamos hueco el mismo día.</p>
+    <a href="#" class="btn btn-primary" id="ctaBook">Reservar por WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">
+      <span><em>Nails</em>Addiction</span>
+    </div>
+    <p>Calle Cifuentes, 19, 19003 Guadalajara &middot; © 2026 NailsAddiction</p>
+  </div>
+</footer>
+
+<a href="#" class="wa-float" id="floatWa" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.1c-.24.68-1.4 1.32-1.94 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.37-.15-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.11.32.02.52-.09.2-.14.32-.27.49-.13.17-.28.38-.4.51-.13.13-.27.28-.12.55.15.27.68 1.12 1.46 1.82 1 .89 1.85 1.17 2.12 1.3.27.13.43.11.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.22.6-.13.25.09 1.58.75 1.85.88.27.13.45.2.51.31.07.11.07.63-.17 1.31z"/></svg>
+</a>
+
+<script>
+  const PHONE = "34682149007";
+  const MSG = encodeURIComponent("Hola! Me gustaría reservar cita en NailsAddiction.");
+  const waLink = `https://wa.me/${PHONE}?text=${MSG}`;
+  ["navBook","heroBook","ctaBook","floatWa"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.href = waLink;
+  });
+</script>
+
+</body>
+</html>
